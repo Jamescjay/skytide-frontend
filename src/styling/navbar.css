@@ -1,0 +1,36 @@
+/* File: navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #02172c;
+  padding: 1rem 2rem;
+  color: white;
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+}
+.auth-buttons button {
+  margin-left: 10px;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+.signup {
+  background-color: #0056b3;
+  color: white;
+}
+.login {
+  background-color: white;
+  color: #0056b3;
+}
