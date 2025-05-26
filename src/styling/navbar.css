@@ -1,36 +1,104 @@
-/* File: navbar.css */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #02172c;
+  background-color: #f5f5f5;
   padding: 1rem 2rem;
-  color: white;
-}
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-.nav-links {
-  list-style: none;
+  margin: 0 20px;
   display: flex;
-  gap: 1.5rem;
+  flex-direction: column;
+  align-items: flex-start; /* align left, change to center if you want centered */
+  gap: 1rem; /* vertical spacing between children */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.nav-links li a {
-  color: white;
-  text-decoration: none;
+
+.navbar-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
 }
-.auth-buttons button {
-  margin-left: 10px;
+
+.search-bar {
+  width: 100%;
+  max-width: 600px; /* limit max width */
   padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: border-color 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.nav-buttons button {
+  flex: 1;
+  padding: 0.6rem 0;
+  font-size: 1rem;
   border: none;
+  color:black;
+  background: white;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-.signup {
-  background-color: #0056b3;
-  color: white;
+
+.nav-buttons button:hover {
+  background-color: grey;
 }
-.login {
+
+.extra-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: fill;
+  justify-content: flex-start; /* change to center if needed */
+}
+
+.extra-buttons button {
+  flex: 1;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color:black;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.extra-buttons button:hover {
+ background-color: grey;
+}
+
+.search-container {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  gap: 0.5rem;
+}
+
+.search-left-button {
   background-color: white;
-  color: #0056b3;
+  border: none;
+  color: black;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-left-button:hover {
+  background-color: grey;
 }

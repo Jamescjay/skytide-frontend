@@ -1,30 +1,27 @@
-/* File: Navbar.jsx */
 import React from "react";
 import "../styling/navbar.css";
 
 function Navbar() {
   return (
-    <nav className="navbar">
-      <div className="logo">SkyTide</div>
-      <ul className="nav-links">
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">Movies</a>
-        </li>
-        <li>
-          <a href="#">News</a>
-        </li>
-        <li>
-          <a href="#">Skytide</a>
-        </li>
-      </ul>
-      <div className="auth-buttons">
-        <button className="signup">Signup</button>
-        <button className="login">Login</button>
+    <div>
+      <div className="navbar">
+        <div className="search-container">
+          <button className="search-left-button">🔍</button>
+          <input className="search-bar" placeholder="search movie..." />
+        </div>
+        <div className="nav-buttons">
+          <button>Movies</button>
+          <button>TV shows</button>
+          <button>News</button>
+          <button>About</button>
+        </div>
       </div>
-    </nav>
+      <div className="extra-buttons">
+        <button>Following</button>
+        <button>For you</button>
+        <button>Trending</button>
+      </div>
+    </div>
   );
 }
 

@@ -1,98 +1,60 @@
-// File: Home.jsx
-import React, { useState } from "react";
+import React from "react";
 import "../styling/home.css";
-import Movies from "../components/Movies";
-import StarRating from "../components/StarRating";
+import Movie from "../components/Movie";
+import Navbar from "../components/Navbar";
 
-const bannerMovies = [
+
+const movieList = [
   {
-    title: "AVENGERS - AGE OF ULTRON",
-    genres: "Action | Animation | Family",
-    duration: "2hr 23min",
+    title: "The Wailing",
+    percent: 70,
+    ratings: 3.5,
+    timePosted: "2 hrs ago",
+    description:
+      "A mysterious force causes a series of murders in a rural village, leaving the townspeople fearful and confused.",
+    img: "https://cinemaunchained.wordpress.com/wp-content/uploads/2016/12/heropage-980x560_52.jpg?w=640",
+  },
+  {
+    title: "Warcraft",
+    percent: 60,
     ratings: 4,
-    image:
-      "https://ftw.usatoday.com/gcdn/authoring/images/smg/2025/03/03/SFTW/81236888007-90-1005123.jpeg?crop=1199,674,x0,y0&width=660&height=371&format=pjpg&auto=webp",
+    timePosted: "3 days ago",
+    description:
+      "Orcs and humans clash in a fantastical battle for control of their shared world in this high-stakes adventure.",
+    img: "https://blz-contentstack-images.akamaized.net/v3/assets/blt0e00eb71333df64e/bltc840ddd2d0d75f5f/673284107e4dc122ed2fcee0/orcs_vs_humans_keyart.webp",
   },
   {
-    title: "WRONG SIDE OF TOWN",
-    genres: "Action | Adventure",
-    duration: "2hr 10min",
+    title: "The Witch",
+    percent: 90,
     ratings: 4.5,
-    image: "https://i.ytimg.com/vi/h3LrvFGIp5o/maxresdefault.jpg",
+    timePosted: "1 year ago",
+    description:
+      "A devout family in 1600s New England is torn apart by forces of evil lurking in the woods beyond their farm.",
+    img: "https://resizing.flixster.com/InrWpLnk9mUDzP0vV9KGu8agF9g=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11451256_v_h9_aq.jpg",
   },
   {
-    title: "PIRATES OF CARIBBEAN",
-    genres: "Action | Fantasy",
-    duration: "2hr 25min",
-    ratings: 5,
-    image:
-      "https://www.lifewire.com/thmb/D7p_u9SG-040Lv9Th1oG2IOEGT0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Piratesofthecarribean-0fc72c9f13da4b29a527546ed83edce3.jpg",
+    title: "The Shallows",
+    percent: 50,
+    ratings: 3,
+    timePosted: "5 days ago",
+    description:
+      "A lone surfer must outwit a great white shark circling her stranded rock just yards from the shore.",
+    img: "https://m.media-amazon.com/images/S/pv-target-images/fd5af008d67e2b84a00b73b25dcbb717272afb6b57bd94c6452ba5a9e3c418f1.jpg",
   },
 ];
 
-function Home() {
-  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % bannerMovies.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex(
-      (prev) => (prev - 1 + bannerMovies.length) % bannerMovies.length
-    );
-  };
-
-  const getSideMovies = () => {
-    const side1 = (currentIndex + 1) % bannerMovies.length;
-    const side2 = (currentIndex + 2) % bannerMovies.length;
-    return [bannerMovies[side1], bannerMovies[side2]];
-  };
-
-  const mainMovie = bannerMovies[currentIndex];
-  const [side1, side2] = getSideMovies();
-
+const Home = () => {
   return (
-    <div className="home">
-      <div className="banner">
-        <button className="nav-arrow left" onClick={prevSlide}>
-          &#8249;
-        </button>
-
-        <div className="main-movie">
-          <div className="main-movie::before" />
-          <img src={mainMovie.image} alt={mainMovie.title} />
-          <div className="movie-info">
-            <h2>{mainMovie.title}</h2>
-            <p>
-              {mainMovie.genres} | Duration: {mainMovie.duration}
-            </p>
-            {mainMovie.ratings && <StarRating rating={mainMovie.ratings} />}
-          </div>
-        </div>
-
-        <div className="side-movies">
-          {[side1, side2].map((movie, idx) => (
-            <div key={idx} className="side-movie">
-              <img src={movie.image} alt={movie.title} />
-              <div className="side-info">
-                <h4>{movie.title}</h4>
-                <p>{movie.genres}</p>
-                <p>Duration: {movie.duration}</p>
-                {movie.ratings && <StarRating rating={movie.ratings} />}
-              </div>
-            </div>
-          ))}
-        </div>
-        <button className="nav-arrow right" onClick={nextSlide}>
-          &#8250;
-        </button>
+    <div>
+      <Navbar />
+      <div className="home">
+        {movieList.map((movie, index) => (
+          <Movie key={index} {...movie} />
+        ))}
       </div>
-
-      <h2 className="featured-title">FEATURED MOVIES</h2>
-      <Movies />
     </div>
   );
-}
+};
 
 export default Home;
