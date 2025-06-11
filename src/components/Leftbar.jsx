@@ -1,6 +1,7 @@
 // Leftbar.jsx
 import React from "react";
 import "../styling/leftbar.css";
+import { Link } from "react-router-dom";
 
 function Leftbar() {
   return (
@@ -14,8 +15,10 @@ function Leftbar() {
       <nav className="nav-menu">
         <ul>
           <li className="nav-item active">
+            <Link>
             <div className="nav-icon">🏠</div>
             <span className="nav-text">Home</span>
+            </Link>
           </li>
           <li className="nav-item">
             <div className="nav-icon">🧭</div>
@@ -38,8 +41,9 @@ function Leftbar() {
             <span className="nav-text">Settings</span>
           </li>
           <li className="nav-item">
-            <div className="nav-icon">👤</div>
-            <span className="nav-text">Your profile</span>
+            <Link to="/profile" className="nav-link">
+            <span className="nav-text">My profile</span>
+            </Link>
           </li>
         </ul>
 
