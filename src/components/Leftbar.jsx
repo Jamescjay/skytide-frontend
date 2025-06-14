@@ -15,10 +15,8 @@ function Leftbar() {
       <nav className="nav-menu">
         <ul>
           <li className="nav-item active">
-            <Link>
             <div className="nav-icon">🏠</div>
             <span className="nav-text">Home</span>
-            </Link>
           </li>
           <li className="nav-item">
             <div className="nav-icon">🧭</div>

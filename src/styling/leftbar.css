@@ -191,3 +191,41 @@
 .leftbar::-webkit-scrollbar-thumb:hover {
   background: #a8a8af;
 }
+
+.dark-mode .leftbar {
+  background-color: #000000;
+  color: #ffffff;
+  border-right: 1px solid #333;
+}
+
+.dark-mode .nav-item:hover {
+  background-color: #1c1c1e;
+}
+
+.dark-mode .nav-item.active {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark-mode .new-post-section {
+  border-top: 1px solid #333;
+}
+
+.dark-mode .profile-section {
+  background-color: #1a1a1a;
+  border-top: 1px solid #333;
+}
+
+.dark-mode .profile-name,
+.dark-mode .profile-title,
+.dark-mode .profile-email,
+.dark-mode .profile-location {
+  color: #f1f1f1;
+}
+
+.dark-mode .profile-action-btn {
+  color: #0a84ff;
+}
+.dark-mode .profile-action-btn:hover {
+  color: #66aaff;
+}
