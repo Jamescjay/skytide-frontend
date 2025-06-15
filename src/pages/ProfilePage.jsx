@@ -25,8 +25,19 @@ function ProfilePage() {
       },
       time: "5h ago",
     },
-    {
+      {
       id: 3,
+      repostedBy: "rachel_robinson",
+      originalPost: {
+        author: "admin",
+        caption: "The Godfather – A timeless classic of film history.",
+        image: "https://c4.wallpaperflare.com/wallpaper/607/847/687/deadpool-2-hd-4k-movies-wallpaper-preview.jpg",
+        time: "2d ago",
+      },
+      time: "5h ago",
+    },
+    {
+      id: 4,
       repostedBy: "rachel_robinson",
       originalPost: {
         author: "admin",
@@ -36,6 +47,7 @@ function ProfilePage() {
       },
       time: "8h ago",
     },
+
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(null);

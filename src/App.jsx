@@ -6,6 +6,7 @@ import Leftbar from "./components/Leftbar";
 import Home from "./pages/Home";
 import ProfilePage from "./pages/ProfilePage";
 import Rightbar from "./components/Rightbar";
+import AuthPage from "./pages/AuthPage";
 
 const App = () => {
   return (
@@ -15,6 +16,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/login" element={<AuthPage type="login" />} />   
+          <Route path="/signup" element={<AuthPage type="signup" />} /> 
         </Routes>
         <Rightbar />
       </div>
