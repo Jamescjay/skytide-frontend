@@ -18,7 +18,7 @@ const AuthPage = ({ type }) => {
 
   const handleAuth = async (values, actions) => {
     try {
-      // Simulate an API call response
+      
       const response = {
         refresh_token: 'mock_refresh_token_123',
         access_token: 'mock_access_token_abc',
